@@ -1,0 +1,98 @@
+[theme]
+dark = "warm-burnout-dark"
+light = "warm-burnout-light"
+
+[editor]
+icons = true
+continue-comments = true
+
+# [editor.format]
+# on-type = true
+
+[editor.splits]
+strategy = "balanced"
+
+[editor.bufferline]
+show = "always"
+
+[editor.statusline.mode]
+color = true
+
+[editor.completion]
+trigger-length = 1
+
+[editor.cursor]
+highlight-line = true
+block-rendering = "native"
+
+[editor.cursor.shape]
+insert = "bar"
+
+[editor.command-line]
+show = "auto"
+
+[editor.mouse]
+middle-click-paste = false
+
+[editor.files.save]
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+[editor.breadcrumb]
+enable = true
+
+# [editor.lsp.progress]
+# enable = true
+
+[editor.lsp.document-highlight]
+auto-trigger = true
+
+[editor.lsp.code-lenses]
+enable = true
+
+# [editor.spelling]
+# languages = ["en_US"]
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent.smart-tab]
+enable = true
+
+[editor.diagnostics.inline]
+cursor-line = "warning" # Show warnings and errors inline on the cursor line.
+
+[keys.normal]
+"K" = "hover"
+"A-k" = "keep_selections"
+"$" = "extend_to_line_end"
+"^" = "extend_to_line_start"
+
+[keys.insert]
+A-h = "move_char_left"
+A-j = "move_line_down"
+A-k = "move_line_up"
+A-l = "move_char_right"
+A-o = "open_below"
+A-O = "open_above"
+
+[commands.":ask"]
+desc = "Open Codex beside Mitos with a prompt, the current location, and main selection."
+accepts = '"<prompt>"'
+# The quoted heredoc and command substitution pass code as one literal argument.
+commands = [
+  ''':run-shell-command exec sh -c 'exec rex do ask -s "$REX_SESSION" -b "$REX_BLOCK" "cwd=$PWD" "prompt=$(cat)" >/dev/null' <<'MITOS_ASK_EOF'
+%arg{0}
+
+Editor context:
+Buffer: %{buffer_name}
+File: %{file_path_absolute}
+Cursor: %{cursor_line}:%{cursor_column}
+Selected lines: %{selection_line_start}-%{selection_line_end}
+
+Selection:
+%{selection}
+--- End of Mitos context ---
+MITOS_ASK_EOF
+''',
+]

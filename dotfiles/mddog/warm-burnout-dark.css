@@ -1,0 +1,48 @@
+/* Palette adapted from Felipe Lima's Warm Burnout theme for Mitos. */
+:root {
+  color-scheme: dark;
+
+  /* Terminal */
+  --mddog-bg: #1a1510;
+  --mddog-fg: #bfbdb6;
+  --mddog-fg-muted: #ada69c;
+  --mddog-fg-bright: #bfbdb6;
+  --mddog-selection-bg: #363a3a;
+  --mddog-bar-bg: #14120f;
+  --mddog-border: #363a3a;
+  --mddog-skeleton: #222018;
+
+  /* Markdown */
+  --mddog-text: #bfbdb6;
+  --mddog-text-muted: #ada69c;
+  --mddog-heading: #b4bc78;
+  --mddog-link: #90aec0;
+  --mddog-accent: #b8522e;
+  --mddog-code-bg: #222018;
+  --mddog-pre-bg: #1f1d17;
+  --mddog-alt-bg: #1f1d17;
+  --mddog-rule: #363a3a;
+  --mddog-mark-bg: #46351c;
+  --mddog-match-bg: #46351c;
+  --mddog-match-current-bg: #5b4527;
+  --mddog-text-selection: #363a3a;
+  --mddog-alert-note: #90aec0;
+  --mddog-alert-tip: #70bf56;
+  --mddog-alert-important: #d4a8b8;
+  --mddog-alert-warning: #f5c56e;
+  --mddog-alert-caution: #f49090;
+  --mddog-diff-add-bg: #22291a;
+  --mddog-diff-del-bg: #372024;
+  --mddog-button-bg: #222018;
+
+  /* Syntax highlighting */
+  --mddog-pl-comment: #b4a89c;
+  --mddog-pl-keyword: #ff8f40;
+  --mddog-pl-string: #b4bc78;
+  --mddog-pl-constant: #d4a8b8;
+  --mddog-pl-entity: #ffb454;
+  --mddog-pl-inserted: #70bf56;
+  --mddog-pl-deleted: #f26d78;
+  --mddog-pl-variable: #bfbdb6;
+  --mddog-pl-tag: #dc9e92;
+}

@@ -1,0 +1,14 @@
+# Optional embedded tools. Select with mise -E embedded.
+[tools]
+"cargo:defmt-print" = "latest"
+"cargo:esp-generate" = "latest"
+"espflash" = { version = "branch:main", crate = "espflash" }
+"cargo:espup" = "latest"
+"cargo:probe-rs-tools" = "latest"
+
+[bootstrap.packages]
+"brew:arm-linux-gnueabihf-binutils" = "latest"
+"brew:esptool" = "latest"
+
+[tool_alias]
+"espflash" = "cargo:https://github.com/esp-rs/espflash.git"

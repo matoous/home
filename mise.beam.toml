@@ -1,0 +1,4 @@
+# Optional beam tools. Select with mise -E beam.
+[tools]
+"elixir" = "latest"
+"erlang" = "latest"

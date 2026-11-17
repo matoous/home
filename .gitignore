@@ -1,0 +1,15 @@
+.DS_Store
+/.mise.local.toml
+/mise.local.toml
+/raycast.rayconfig
+/dotfiles/helix/runtime
+/dotfiles/mitos/runtime
+/dotfiles/gh/hosts.yml
+/dotfiles/codex/auth.json
+/dotfiles/codex/history.jsonl
+/dotfiles/codex/sessions/
+/dotfiles/codex/archived_sessions/
+/dotfiles/codex/cache/
+/dotfiles/codex/*.sqlite*
+/dotfiles/pgcli/history
+/dotfiles/pgcli/log

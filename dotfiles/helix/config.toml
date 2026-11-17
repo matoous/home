@@ -1,0 +1,51 @@
+[theme]
+dark = "warm-burnout-dark"
+light = "warm-burnout-light"
+
+[editor]
+bufferline = "always"
+color-modes = true
+completion-trigger-len = 1
+continue-comments = true
+cursorline = true
+middle-click-paste = false
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+[editor.lsp]
+display-progress-messages = true
+auto-document-highlight = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.smart-tab]
+enable = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
+
+# [editor.breadcrumb]
+# enabled = true
+
+[keys.normal]
+"K" = "hover"
+"A-k" = "keep_selections"
+"$" = "extend_to_line_end"
+"^" = "extend_to_line_start"
+
+[keys.insert]
+A-h = "move_char_left"
+A-j = "move_line_down"
+A-k = "move_line_up"
+A-l = "move_char_right"
+A-o = "open_below"
+A-O = "open_above"
+
+[keys.normal.space.g]
+p = "changed_file_picker"
+b = ":sh gh browse %{buffer_name}"
+B = ":sh gh browse %{buffer_name}:%{cursor_line}"

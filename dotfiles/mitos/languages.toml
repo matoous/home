@@ -1,0 +1,141 @@
+[language-server.tsgo]
+command = "tsc"
+args = ["--lsp", "--stdio"]
+config.hostInfo = "helix"
+
+[language-server.tsgo.config.typescript]
+format.enable = false
+inlayHints.enumMemberValues.enabled = true
+inlayHints.functionLikeReturnTypes = true
+inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+suggest.completeFunctionCalls = true
+tsserver.enableTracing = true
+tsserver.experimental.enableProjectDiagnostics = true
+tsserver.pluginPaths = ["typescript-plugin-css-modules", "./node_modules"]
+updateImportsOnFileMove.enabled = "always"
+
+# TODO: configure for openapi specs
+[language-server.vacuum]
+command = "vacuum"
+args = ["language-server"]
+
+[language-server.sql]
+command = "sql-language-server"
+args = ["up", "--method", "stdio"]
+
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+[language-server.harper]
+command = "harper-ls"
+args = ["--stdio"]
+config = { harper-ls = {} }
+
+[language-server.gpt]
+command = "helix-gpt"
+args = ["--handler", "copilot"]
+
+[language-server.gopls]
+command = "gopls"
+
+[language-server.gopls.config]
+usePlaceholders = true
+completeFunctionCalls = true
+
+[[language]]
+name = "git-commit"
+language-servers = [ "harper" ]
+
+[[language]]
+name = "astro"
+language-servers = [ { name = "astro-ls", except-features = ["format"] }, "biome", "harper" ]
+auto-format = true
+
+[[language]]
+name = "sql"
+language-servers = [ "sql" ]
+
+[[language]]
+name = "markdown"
+language-servers = [ "marksman", "markdown-oxide", "harper" ]
+
+[[language]]
+name = "jsonnet"
+auto-format = true
+
+[[language]]
+name = "yaml"
+language-servers = [ "yaml-language-server", "ansible-language-server", "harper" ]
+auto-format = false
+
+[[language]]
+name = "markdoc"
+language-servers = [ "harper" ]
+
+[[language]]
+name = "typst"
+formatter = { command = "typstyle" }
+language-servers = [ "tinymist", "typst-lsp" ]
+auto-format = true
+
+[[language]]
+name = "lua"
+auto-format = true
+formatter = { command = "stylua" }
+
+[[language]]
+name = "javascript"
+language-servers = [
+  # { name = "typescript-language-server", except-features = [ "format" ] },
+  "tsgo",
+  "biome"
+]
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = [
+  # { name = "typescript-language-server", except-features = [ "format" ] },
+  "tsgo",
+  "biome"
+]
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [
+  # { name = "typescript-language-server", except-features = [ "format" ] },
+  "tsgo",
+  "biome"
+]
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [
+  # { name = "typescript-language-server", except-features = [ "format" ] },
+  "tsgo",
+  "biome"
+]
+auto-format = true
+
+[[language]]
+name = "json"
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.pylsp.config.pylsp]
+plugins.ruff.enabled = true
+plugins.black.enabled = true
+
+[[language]]
+name = "python"
+language-servers = ["ruff", "ty"]
+auto-format = true

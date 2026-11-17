@@ -1,0 +1,26 @@
+# For keybindings see: https://github.com/ghostty-org/ghostty/blob/main/src/config/Config.zig
+shell-integration = fish
+shell-integration-features = no-cursor
+
+cursor-style = block
+cursor-style-blink = false
+
+theme = dark:warm-burnout-dark,light:warm-burnout-light
+
+fullscreen = true
+# font-thicken = true
+font-family = "Berkeley Mono"
+# keybind = ctrl+d=scroll_page_down
+# keybind = ctrl+u=scroll_page_up
+keybind = global:cmd+backquote=toggle_quick_terminal
+fullscreen = true
+
+# MacOS-specific
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+# Icon
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = #FF61F2
+macos-icon-screen-color = #141211,#1E1C1C

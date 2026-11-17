@@ -1,0 +1,846 @@
+min_version = "2026.10.23"
+
+[vars]
+dotfiles_root = "{{ config_source | canonicalize | dirname }}"
+
+# Global developer tools. Project mise.toml files can override these versions.
+[tools]
+# Runtimes
+
+# Node.js JavaScript runtime.
+# https://nodejs.org/
+"node" = "24"
+
+# Go compiler and standard tools.
+# https://go.dev/
+"go" = "latest"
+
+# Rust compiler and package manager.
+# https://rust-lang.org/
+"rust" = "stable"
+
+# Python package and interpreter manager.
+# https://docs.astral.sh/uv/
+"uv" = "latest"
+
+# Python interpreter.
+# https://www.python.org/
+"python" = "latest"
+
+# Java development kit.
+# https://openjdk.org/
+"java" = "latest"
+
+# Zig compiler and build tools.
+# https://ziglang.org/
+"zig" = "latest"
+
+# .NET SDK and runtime.
+# https://dotnet.microsoft.com/
+"dotnet" = "latest"
+
+# Infrastructure as code.
+# https://developer.hashicorp.com/terraform
+"terraform" = "latest"
+
+# JavaScript package manager.
+# https://yarnpkg.com/
+"yarn" = "latest"
+
+# Portable command-line tools
+
+# File encryption.
+# https://age-encryption.org/
+"age" = "latest"
+
+# Browser automation for AI agents.
+# https://agent-browser.dev/
+"agent-browser" = "latest"
+
+# Kubernetes deployment management.
+# https://argo-cd.readthedocs.io/
+"argocd" = "latest"
+
+# Kubernetes authentication through AWS IAM.
+# https://github.com/kubernetes-sigs/aws-iam-authenticator
+"aws-iam-authenticator" = "latest"
+
+# File viewer with syntax highlighting.
+# https://github.com/sharkdp/bat
+"bat" = "latest"
+
+# JavaScript formatter and linter.
+# https://biomejs.dev/
+"biome" = "latest"
+
+# Install prebuilt Rust binaries.
+# https://github.com/cargo-bins/cargo-binstall
+"cargo-binstall" = "latest"
+
+# Cloudflare Tunnel client.
+# https://github.com/cloudflare/cloudflared
+"cloudflared" = "latest"
+
+# Configuration policy testing.
+# https://www.conftest.dev/
+"conftest" = "latest"
+
+# Load environment variables per directory.
+# https://direnv.net/
+"direnv" = "latest"
+
+# Inspect container image layers.
+# https://github.com/wagoodman/dive
+"dive" = "latest"
+
+# DNS lookup client.
+# https://doggo.mrkaran.dev/
+"doggo" = "latest"
+
+# Fast file finder.
+# https://github.com/sharkdp/fd
+"fd" = "latest"
+
+# Interactive fuzzy finder.
+# https://junegunn.github.io/fzf/
+"fzf" = "latest"
+
+# Git diff viewer.
+# https://dandavison.github.io/delta/
+"delta" = "latest"
+
+# Large file storage for Git.
+# https://git-lfs.com/
+"git-lfs" = "latest"
+
+# Go linter runner.
+# https://golangci-lint.run/
+"golangci-lint" = "latest"
+
+# Java and Kotlin build system.
+# https://gradle.org/
+"gradle" = "latest"
+# 0.39.0 has no macOS release artifacts.
+# AWS role switching.
+# https://docs.granted.dev/
+"granted" = "0.38.0"
+
+# Send gRPC requests.
+# https://github.com/fullstorydev/grpcurl
+"grpcurl" = "latest"
+
+# Kubernetes package manager.
+# https://helm.sh/
+"helm" = "latest"
+
+# Static website generator.
+# https://gohugo.io/
+"hugo" = "latest"
+
+# JSON processor.
+# https://jqlang.org/
+"jq" = "latest"
+
+# Jsonnet package manager.
+# https://github.com/jsonnet-bundler/jsonnet-bundler
+"jsonnet-bundler" = "latest"
+
+# Project command runner.
+# https://just.systems/
+"just" = "latest"
+
+# Local Kubernetes clusters in containers.
+# https://kind.sigs.k8s.io/
+"kind" = "latest"
+
+# Kubernetes manifest validator.
+# https://github.com/yannh/kubeconform
+"kubeconform" = "latest"
+
+# Switch Kubernetes contexts and namespaces.
+# https://github.com/ahmetb/kubectx
+"kubectx" = "latest"
+
+# Kubernetes command-line client.
+# https://kubernetes.io/docs/reference/kubectl/
+"kubectl" = "latest"
+
+# Encrypt Kubernetes Secrets.
+# https://github.com/bitnami/sealed-secrets
+"kubeseal" = "latest"
+
+# Lua language server.
+# https://luals.github.io/
+"lua-language-server" = "latest"
+
+# Markdown language server.
+# https://github.com/artempyanykh/marksman
+"marksman" = "latest"
+
+# Java build and dependency manager.
+# https://maven.apache.org/
+"maven" = "latest"
+
+# Terminal Markdown viewer.
+# https://mddog.pages.dev/
+"github:qu8n/mddog" = { version = "1.0.5", os = ["macos"] }
+
+# Sign and verify files.
+# https://jedisct1.github.io/minisign/
+"minisign" = "latest"
+
+# Trusted local development certificates.
+# https://github.com/FiloSottile/mkcert
+"mkcert" = "latest"
+
+# Mac cleanup and optimization.
+# https://github.com/tw93/Mole
+"mole" = "latest"
+
+# HTTP load testing.
+# https://github.com/hatoo/oha
+"oha" = "latest"
+
+# Document format converter.
+# https://pandoc.org/
+"pandoc" = "latest"
+
+# Cloud storage synchronization.
+# https://rclone.org/
+"rclone" = "latest"
+
+# Fast text search.
+# https://github.com/BurntSushi/ripgrep
+"ripgrep" = "latest"
+
+# Customizable shell prompt.
+# https://starship.rs/
+"starship" = "latest"
+
+# Certificate and cryptography tools.
+# https://github.com/smallstep/cli
+"step" = "latest"
+
+# Kubernetes terminal interface.
+# https://github.com/nklmilojevic/sofka
+"sofka" = "latest"
+
+# Terraform linter.
+# https://github.com/terraform-linters/tflint
+"tflint" = "latest"
+
+# Document typesetting system.
+# https://typst.app/
+"typst" = "latest"
+
+# Git worktree manager.
+# https://worktrunk.dev/
+"worktrunk" = "latest"
+
+# Zig language server.
+# https://zigtools.org/zls/
+"zls" = "latest"
+
+# Directory navigation by history.
+# https://github.com/ajeetdsouza/zoxide
+"zoxide" = "latest"
+
+# Protocol Buffers development tools.
+# https://buf.build/docs/cli/
+"buf" = "latest"
+
+# Go debugger.
+# https://github.com/go-delve/delve
+"go:github.com/go-delve/delve/cmd/dlv" = "v1.27.2"
+
+# Go linting language server.
+# https://github.com/nametake/golangci-lint-langserver
+"golangci-lint-langserver" = "latest"
+
+# Go language server.
+# https://go.dev/gopls/
+"go:golang.org/x/tools/gopls" = "v0.23.0"
+
+# Build and publish software releases.
+# https://goreleaser.com/
+"goreleaser" = "latest"
+
+# Go vulnerability scanner.
+# https://go.dev/doc/security/vuln/
+"go:golang.org/x/vuln/cmd/govulncheck" = "v1.8.0"
+
+# Jsonnet language server.
+# https://github.com/grafana/jsonnet-language-server
+"go:github.com/grafana/jsonnet-language-server" = "v0.17.0"
+
+# Jsonnet linter.
+# https://github.com/google/go-jsonnet
+"go:github.com/google/go-jsonnet/cmd/jsonnet-lint" = "v0.22.0"
+
+# Prometheus SLO generator.
+# https://sloth.dev/
+"go:github.com/slok/sloth/cmd/sloth" = "v0.16.0"
+
+# Go static analysis.
+# https://staticcheck.dev/
+"staticcheck" = "latest"
+
+# Jsonnet Kubernetes deployment tool.
+# https://tanka.dev/
+"go:github.com/grafana/tanka/cmd/tk" = "v0.39.3"
+
+# YAML formatter.
+# https://github.com/google/yamlfmt
+"yamlfmt" = "latest"
+
+# Rust tools
+
+# Code search and replacement.
+# https://github.com/dalance/amber
+"cargo:amber" = "latest"
+
+# Structural code search and rewriting.
+# https://ast-grep.github.io/
+"ast-grep" = "latest"
+
+# Date and time calculations.
+# https://github.com/BurntSushi/bttf
+"bttf" = { version = "branch:master", crate = "bttf" }
+
+# Scan Rust dependencies for vulnerabilities.
+# https://rustsec.org
+"cargo:cargo-audit" = "latest"
+
+# Analyze Rust binary size.
+# https://github.com/RazrFalcon/cargo-bloat
+"cargo:cargo-bloat" = "latest"
+
+# Check Rust dependency policies.
+# https://embarkstudios.github.io/cargo-deny/
+"cargo:cargo-deny" = "latest"
+
+# Edit Cargo dependencies.
+# https://github.com/killercup/cargo-edit
+"cargo:cargo-edit" = "latest"
+
+# Find outdated Rust dependencies.
+# https://github.com/kbknapp/cargo-outdated
+"cargo:cargo-outdated" = "latest"
+
+# Cargo manifest formatter.
+# https://github.com/tbrand/cargo-tomlfmt
+"cargo:cargo-tomlfmt" = "latest"
+
+# Find unused Rust feature flags.
+# https://github.com/TimonPost/cargo-unused-features
+"cargo:cargo-unused-features" = "latest"
+
+# Update installed Cargo binaries.
+# https://github.com/nabijaczleweli/cargo-update
+"cargo:cargo-update" = "latest"
+
+# Rerun commands when files change.
+# https://watchexec.github.io/
+"cargo:cargo-watch" = "latest"
+
+# AI coding agent for the terminal.
+# https://openai.com/codex/
+"codex" = "latest"
+
+# Clean up stale Git branches.
+# https://github.com/armgabrielyan/deadbranch
+"cargo:deadbranch" = "latest"
+
+# Generate performance flamegraphs.
+# https://github.com/flamegraph-rs/flamegraph
+"cargo:flamegraph" = "latest"
+
+# English grammar checker.
+# https://writewithharper.com/
+"harper-cli" = "latest"
+
+# English grammar language server.
+# https://writewithharper.com/
+"harper-ls" = "latest"
+
+# Build books from Markdown.
+# https://rust-lang.github.io/mdBook/
+"cargo:mdbook" = "latest"
+
+# Lossless PNG optimizer.
+# https://github.com/oxipng/oxipng
+"oxipng" = "latest"
+
+# Automate Rust package releases.
+# https://release-plz.dev/
+"release-plz" = "latest"
+
+# Markdown linter and formatter.
+# https://rumdl.dev
+"cargo:rumdl" = "latest"
+
+# Lua formatter.
+# https://github.com/JohnnyMorganz/StyLua
+"stylua" = "latest"
+
+# TOML formatter and language server.
+# https://taplo.tamasfe.dev/
+"taplo" = "latest"
+
+# Count source code lines.
+# https://github.com/XAMPPRocky/tokei
+"tokei" = "latest"
+
+# Typst formatter.
+# https://typstyle-rs.github.io/typstyle/
+"typstyle" = "latest"
+
+# Python tools
+
+# Python type checker.
+# https://github.com/astral-sh/ty/
+"pypi:ty" = "latest"
+
+# Node tools and language servers
+
+# Astro language server.
+# https://github.com/withastro/astro
+"npm:@astrojs/language-server" = "latest"
+
+# GitHub AI coding assistant.
+# https://github.com/github/copilot-cli/
+"npm:@github/copilot" = "latest"
+
+# Bash language server.
+# https://github.com/bash-lsp/bash-language-server
+"npm:bash-language-server" = "latest"
+
+# Monorepo build and task runner.
+# https://nx.dev
+"npm:nx" = "latest"
+
+# JavaScript package manager.
+# https://pnpm.io
+"npm:pnpm" = "latest"
+
+# SQL language server.
+# https://github.com/joe-re/sql-language-server
+"npm:sql-language-server" = "latest"
+
+# TypeScript and JavaScript language server.
+# https://github.com/typescript-language-server/typescript-language-server
+"npm:typescript-language-server" = "latest"
+
+# TypeScript compiler.
+# https://www.typescriptlang.org/
+"npm:typescript" = "latest"
+
+# Deploy applications to Vercel.
+# https://vercel.com
+"npm:vercel" = "latest"
+
+# HTML, CSS, JSON, and ESLint language servers.
+# https://github.com/hrsh7th/vscode-langservers-extracted
+"npm:vscode-langservers-extracted" = "latest"
+
+# YAML language server.
+# https://github.com/redhat-developer/yaml-language-server
+"npm:yaml-language-server" = "latest"
+
+# Select the bttf crate from its Git repository.
+[tool_alias]
+"bttf" = "cargo:https://github.com/BurntSushi/bttf"
+
+[env]
+_.path = [
+  "/opt/homebrew/bin",
+  "/opt/homebrew/sbin",
+  "/opt/homebrew/opt/ruby/bin",
+  "/opt/homebrew/opt/curl/bin",
+  "/opt/homebrew/opt/libpq/bin",
+]
+
+[settings]
+dotfiles.root = "{{ config_source | canonicalize | dirname }}/dotfiles"
+dotfiles.relative_symlinks = true
+history.sync = "manual"
+fetch_remote_versions_timeout = "30s"
+idiomatic_version_file_enable_tools = ["rust", "node", "terraform"]
+
+[settings.github]
+use_git_credentials = true
+
+[bootstrap.hooks]
+# Install Ruby before reading custom tap metadata.
+pre-packages = "mise bootstrap packages apply brew:ruby"
+# Seed a local Codex configuration on first use.
+pre-dotfiles = '''
+mkdir -p "$HOME/.codex"
+if [ ! -e "$HOME/.codex/config.toml" ]; then
+  install -m 600 "{{ vars.dotfiles_root }}/dotfiles/codex/config.toml" "$HOME/.codex/config.toml"
+fi
+'''
+
+[bootstrap.brew.taps]
+"filosottile/musl-cross" = "https://github.com/filosottile/homebrew-musl-cross.git"
+
+[bootstrap.packages]
+# Native Ruby is shared by tap metadata and interactive use.
+# Ruby language and runtime.
+# https://www.ruby-lang.org/
+"brew:ruby" = "latest"
+
+# Protocol Buffers compiler.
+# https://protobuf.dev/
+"brew:protobuf" = "latest"
+
+# AWS command-line client.
+# https://aws.amazon.com/cli/
+"brew:awscli" = "latest"
+
+# Transfer data over URLs.
+# https://curl.se
+"brew:curl" = "latest"
+
+# PHP interpreter.
+# https://www.php.net/
+"brew:php" = "latest"
+
+# PHP dependency manager.
+# https://getcomposer.org/
+"brew:composer" = "latest"
+
+# GNU command-line utilities.
+# https://www.gnu.org/software/coreutils/
+"brew:coreutils" = "latest"
+
+# Container command-line client.
+# https://www.docker.com/
+"brew:docker" = "latest"
+
+# Docker BuildKit build plugin.
+# https://docs.docker.com/build/
+"brew:docker-buildx" = "latest"
+
+# Run applications with multiple containers.
+# https://docs.docker.com/compose/
+"brew:docker-compose" = "latest"
+
+# Docker authentication for Amazon ECR.
+# https://github.com/awslabs/amazon-ecr-credential-helper
+"brew:docker-credential-helper-ecr" = "latest"
+
+# Disk usage analyzer.
+# https://github.com/Byron/dua-cli
+"brew:dua-cli" = "latest"
+
+# Directory listing with colors and metadata.
+# https://eza.rocks
+"brew:eza" = "latest"
+
+# Interactive command-line shell.
+# https://fishshell.com
+"brew:fish" = "latest"
+
+# Fish plugin manager.
+# https://github.com/jorgebucaran/fisher
+"brew:fisher" = "latest"
+
+# GNU compiler collection.
+# https://gcc.gnu.org/
+"brew:gcc" = "latest"
+
+# Grafana Cloud command-line client.
+# https://github.com/grafana/gcx
+"brew:gcx" = "latest"
+
+# OpenPGP encryption and signing.
+# https://gnupg.org/
+"brew:gnupg" = "latest"
+
+# GitHub command-line client.
+# https://cli.github.com/
+"brew:gh" = "latest"
+# Version control system.
+# https://git-scm.com
+"brew:git" = "latest"
+
+# GNU text search.
+# https://www.gnu.org/software/grep/
+"brew:grep" = "latest"
+
+# Interactive process monitor.
+# https://htop.dev/
+"brew:htop" = "latest"
+
+# HTTP API client.
+# https://httpie.io/
+"brew:httpie" = "latest"
+
+# Image conversion and editing.
+# https://imagemagick.org
+"brew:imagemagick" = "latest"
+
+# Java language server.
+# https://github.com/eclipse-jdtls/eclipse.jdt.ls
+"brew:jdtls" = "latest"
+
+# Jira command-line client.
+# https://github.com/ankitpokhrel/jira-cli
+"brew:jira-cli" = "latest"
+
+# Rust implementation of Jsonnet.
+# https://github.com/deltarocks/jrsonnet
+"brew:jrsonnet" = "latest"
+
+# JSON configuration language.
+# https://jsonnet.org/
+"brew:jsonnet" = "latest"
+
+# Kafka producer and consumer client.
+# https://github.com/edenhill/kcat
+"brew:kcat" = "latest"
+
+# Kotlin language server.
+# https://github.com/fwcd/kotlin-language-server
+"brew:kotlin-language-server" = "latest"
+
+# Query Loki logs.
+# https://grafana.com/oss/loki
+"brew:logcli" = "latest"
+
+# System information summary.
+# https://github.com/fastfetch-cli/fastfetch
+"brew:fastfetch" = "latest"
+
+# Interactive PostgreSQL client.
+# https://pgcli.com/
+"brew:pgcli" = "latest"
+
+# GPG passphrase prompt for macOS.
+# https://github.com/GPGTools/pinentry
+"brew:pinentry-mac" = "latest"
+
+# PostgreSQL database server.
+# https://www.postgresql.org/
+"brew:postgresql@18" = "latest"
+
+# Process viewer.
+# https://github.com/dalance/procs
+"brew:procs" = "latest"
+
+# Move files to the Trash.
+# https://hasseg.org/trash/
+"brew:trash" = "latest"
+
+# Display directory trees.
+# https://oldmanprogrammer.net/source.php?dir=projects/tree
+"brew:tree" = "latest"
+
+# Rerun commands at intervals.
+# https://gitlab.com/procps-ng/procps
+"brew:watch" = "latest"
+
+# Download files over HTTP and FTP.
+# https://www.gnu.org/software/wget/
+"brew:wget" = "latest"
+
+# YubiKey configuration manager.
+# https://developers.yubico.com/yubikey-manager/
+"brew:ykman" = "latest"
+
+# Incident response desktop app.
+# https://incident.io/
+"brew-cask:incident-io" = "latest"
+
+# Password manager.
+# https://1password.com/
+"brew-cask:1password" = "latest"
+
+# 1Password command-line client.
+# https://www.1password.dev/cli/
+"brew-cask:1password-cli" = "latest"
+
+# PDF viewer.
+# https://www.adobe.com/acrobat/pdf-reader.html
+"brew-cask:adobe-acrobat-reader" = "latest"
+
+# Store and access AWS credentials.
+# https://github.com/99designs/aws-vault
+"brew-cask:aws-vault-binary" = "latest"
+
+# ChatGPT desktop app.
+# https://chatgpt.com/download/
+"brew-cask:chatgpt" = { os = "macos", appdir = "~/Applications" }
+
+# BenQ monitor controls.
+# https://www.benq.com/en-us/monitor/software/display-pilot-2.html
+"brew-cask:display-pilot" = { os = "macos", appdir = "~/Applications" }
+
+# Web browser.
+# https://www.mozilla.org/firefox/
+"brew-cask:firefox" = "latest"
+
+# Google Drive desktop synchronization.
+# https://www.google.com/drive/
+"brew-cask:google-drive" = "latest"
+
+# OpenPGP tools for macOS.
+# https://gpgtools.org/
+"brew-cask:gpg-suite-no-mail" = "latest"
+
+# Media player for macOS.
+# https://iina.io/
+"brew-cask:iina" = "latest"
+
+# Menu bar organizer.
+# https://icemenubar.app/
+"brew-cask:jordanbaird-ice" = "latest"
+
+# External monitor brightness and volume controls.
+# https://github.com/MonitorControl/MonitorControl
+"brew-cask:monitorcontrol" = "latest"
+
+# Collaborative notes and workspace.
+# https://www.notion.com/
+"brew-cask:notion" = "latest"
+
+# Markdown notes and knowledge base.
+# https://obsidian.md/
+"brew-cask:obsidian" = "latest"
+
+# Run Linux containers and virtual machines.
+# https://orbstack.dev/
+"brew-cask:orbstack" = "latest"
+
+# API development and testing.
+# https://www.postman.com/
+"brew-cask:postman" = "latest"
+
+# Application launcher and productivity tools.
+# https://raycast.com/
+"brew-cask:raycast" = "latest"
+
+# Team messaging.
+# https://slack.com/
+"brew-cask:slack" = "latest"
+
+# Mesh VPN based on WireGuard (standalone macOS app).
+# https://tailscale.com/
+"brew-cask:tailscale-app" = { os = "macos" }
+
+# Messaging and calls.
+# https://www.whatsapp.com/
+"brew-cask:whatsapp" = "latest"
+
+# YubiKey-backed authentication codes.
+# https://developers.yubico.com/yubioath-flutter/
+"brew-cask:yubico-authenticator" = "latest"
+
+# Video meetings.
+# https://www.zoom.us/
+"brew-cask:zoom" = "latest"
+
+# AI assistant desktop app.
+# https://langdock.com/products/desktop
+"brew-cask:langdock" = { os = "macos", appdir = "~/Applications" }
+
+# Zen web browser.
+# https://zen-browser.app/
+"brew-cask:zen" = { os = "macos", appdir = "~/Applications" }
+
+"brew:lightdash/lightdash/lightdash" = "latest"
+
+# Install Fish plugins after tools are available.
+[tasks.bootstrap]
+run = ["fish -c 'fisher update'"]
+
+[tasks."codex:setup"]
+description = "Restore Codex plugins, including the public skill collection"
+dir = "{{ vars.dotfiles_root }}"
+run = "mise run codex:plugins"
+
+[tasks."codex:config"]
+description = "Apply plugin preferences while preserving private Codex configuration"
+dir = "{{ vars.dotfiles_root }}"
+run = '''
+set -eu
+umask 077
+mkdir -p "$HOME/.codex"
+if [ ! -e "$HOME/.codex/config.toml" ]; then
+  install -m 600 dotfiles/codex/config.toml "$HOME/.codex/config.toml"
+fi
+mise --no-hooks dot apply '~/.codex/config.toml/plugins' '~/.codex/config.toml'
+'''
+
+[tasks."codex:plugins"]
+description = "Restore missing Codex plugins and their enabled/disabled preferences"
+dir = "{{ vars.dotfiles_root }}"
+depends = ["codex:config"]
+run = [
+  '''
+set -eu
+marketplaces=$(codex plugin marketplace list --json)
+if ! printf '%s\n' "$marketplaces" | jq -e '.marketplaces | any(.name == "son-of-anton")' >/dev/null; then
+  codex plugin marketplace add https://github.com/matoous/son-of-anton.git
+fi
+''',
+  "codex plugin marketplace add https://github.com/JetBrains/go-modern-guidelines.git",
+  "codex plugin marketplace add https://github.com/incident-io/skills.git",
+  '''
+set -eu
+selectors=$(taplo get -f dotfiles/codex/plugins.toml -o json plugins | jq -er 'keys[]')
+installed=$(codex plugin list --json)
+for plugin in $selectors; do
+  if printf '%s\n' "$installed" | jq -e --arg plugin "$plugin" '.installed | any(.pluginId == $plugin)' >/dev/null; then
+    continue
+  fi
+  case "$plugin" in
+    *@openai-bundled|*@openai-primary-runtime)
+      printf 'Provided by the Codex runtime when available: %s\n' "$plugin"
+      ;;
+    *) codex plugin add "$plugin" ;;
+  esac
+done
+''',
+  "mise run codex:config",
+]
+
+[dotfiles."~/.codex/config.toml"]
+permissions = "0600"
+
+[dotfile_groups.home]
+root = "."
+manifest = "git"
+# The source tree is organized by app. Deploy only the mappings below.
+exclude = ["**/*"]
+
+[dotfile_groups.home.entries]
+"~/.config/bat" = { source = "bat", mode = "symlink-each" }
+"~/.codex" = { source = "codex", mode = "symlink-each", exclude = [
+  "config.toml",
+  "plugins.toml",
+] }
+"~/.codex/config.toml/plugins" = { source = "codex/plugins.toml", merge = true }
+"~/.config/pgcli" = { source = "pgcli", mode = "symlink-each" }
+"~/.config/fish" = { source = "fish", mode = "symlink-each" }
+"~/.config/gh" = { source = "gh", mode = "symlink-each", exclude = [
+  "hosts.yml",
+] }
+"~/.config/gh-dash" = { source = "gh-dash", mode = "symlink-each" }
+"~/.config/git" = { source = "git", mode = "symlink-each" }
+"~/.config/helix" = { source = "helix", mode = "symlink-each", exclude = [
+  "runtime",
+] }
+"~/.config/mise" = { source = "mise", mode = "symlink-each" }
+"~/.config/mitos" = { source = "mitos", mode = "symlink-each", exclude = [
+  "runtime",
+] }
+"~/.config/neofetch" = { source = "neofetch", mode = "symlink-each" }
+"~/.config/rex" = { source = "rex", mode = "symlink-each" }
+"~/.config/rex/themes" = { source = "ghostty/themes", mode = "symlink-each" }
+"~/.config/mddog/config.toml" = { source = "mddog/config.toml" }
+"~/.config/mddog/warm-burnout-dark.css" = { source = "mddog/warm-burnout-dark.css" }
+"~/.config/mddog/warm-burnout-light.css" = { source = "mddog/warm-burnout-light.css" }
+"~/.config/starship.toml" = { source = "starship/starship.toml" }
+"~/.editorconfig" = { source = "editorconfig/editorconfig" }
